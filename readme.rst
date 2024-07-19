@@ -1,3 +1,6 @@
+Untuk melakukan login silahkan arahkan url ke /admin/login
+
+
 admin ( 
 username => aqil
 password => aqil)
