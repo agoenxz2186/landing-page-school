@@ -1,7 +1,9 @@
 FROM agoenxz21/php56 
 
-COPY . /var/www/html
+COPY . /var/www
 
-RUN chown -R www-data:www-data /var/www/html
+RUN rm -rf docker-compose.yaml .github/ Dockerfile
+
+RUN chown -R www-data:www-data /var/www
 
 EXPOSE 80
