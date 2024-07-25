@@ -1,7 +1,4 @@
-FROM php:5.6-apache
-
-RUN apt-get update && apt-get install -y libpq-dev libmcrypt-dev libxml2-dev libcurl4-openssl-dev libicu-dev \
-    && docker-php-ext-install pdo_mysql pdo_pgsql curl intl mcrypt mbstring xmlrpc
+FROM agoenxz21/php56 
 
 COPY . /var/www/html
 
