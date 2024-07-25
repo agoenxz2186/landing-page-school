@@ -4,5 +4,4 @@ COPY . /var/www
 
 RUN rm -rf docker-compose.yaml .github/ Dockerfile
 
-
 EXPOSE 80
