@@ -1,0 +1,29 @@
+version: '3'
+
+networks:
+  serverbsi:
+    name: projects1_projectsinet
+    external: true
+
+services:
+  landingpageschool:
+    container_name: namelandingpageschool
+    image: siproject/landingpageschool
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    networks:
+      serverbsi:
+        ipv4_address: 192.168.195.15
+
+  landingpageschool_db:
+    container_name: landingpageschool_db
+    image: mariadb:10.3
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sekolah
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    serverbsi:
+      ipv4_address: 192.168.195.16

@@ -1,0 +1,35 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: down container docker
+          run: |
+            set +e
+            docker compose -f docker-compose.yml down
+            set -e
+    
+        - name: remove container docker 
+          run: |
+            set +e  
+            docker image rm siproject/landingpageschool
+            set -e
+        
+        - name: build container docker
+          run: |
+            docker build -t siproject/landingpageschool . 
+
+        - name: up container docker
+          run: |
+            docker compose -f docker-compose.yml up -d
+            
+    
