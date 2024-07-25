@@ -15,7 +15,7 @@ jobs:
         - name: down container docker
           run: |
             set +e
-            docker compose -f docker-compose.yml down
+            docker compose down
             set -e
     
         - name: remove container docker 
@@ -30,6 +30,6 @@ jobs:
 
         - name: up container docker
           run: |
-            docker compose -f docker-compose.yml up -d
+            docker compose up -d
             
     
