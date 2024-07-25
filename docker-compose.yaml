@@ -12,7 +12,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - mysql
+      - landingpageschool_db
     networks:
       serverbsi:
         ipv4_address: 192.168.195.15
