@@ -7,10 +7,9 @@ networks:
 
 services:
   landingpageschool:
-    container_name: namelandingpageschool
+    container_name: landingpageschool
     image: siproject/landingpageschool
-    ports:
-      - "80:80"
+
     networks:
       serverbsi:
         ipv4_address: 192.168.195.15
