@@ -21,5 +21,6 @@ RUN rm -rf docker-compose.yaml .github/ Dockerfile sekolah.sql
 
 RUN mkdir -p /var/www/html/application/cache/sessions
 RUN chmod 0777 /var/www/html/application/cache/sessions
+RUN chmod -R 777 /var/www/assets
 
 EXPOSE 80
