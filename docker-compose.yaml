@@ -9,7 +9,10 @@ services:
   landingpageschool:
     container_name: landingpageschool
     image: siproject/landingpageschool
-
+    restart: always
+    volumes:
+      - /home/bsi/projectsi/sekolah/assets/slider:/var/www/html/assets/images/slider
+      
     networks:
       serverbsi:
         ipv4_address: 192.168.195.15
